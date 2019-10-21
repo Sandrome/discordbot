@@ -25,4 +25,18 @@ bot.on('message', msg => {
      }*/
 });
 
+bot.on('message', msg => {
+    if(msg.content.substring(0, 1) === '!'){
+        var args = msg.substring(1).split(' ');
+        var cmd = args[0];
+        var data = args[1];
+
+        switch(cmd) {
+            case 'level':
+                msg.reply('level');
+            break;
+        }
+    }
+});
+
 bot.login(process.env.BOT_TOKEN);
