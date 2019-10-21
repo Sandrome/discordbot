@@ -1,16 +1,16 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-bot.on('ready', () => {
+bot.on('ready', function() {
     console.log(`Logged in as Sreyas!`);
 });
 
-bot.on('message', function(msg) {
+bot.on('message', msg => {
     if (msg.content === 'ping') {
        msg.reply('pong');
        }
-       if (msg.substring(0, 1) == '!') {
-        var args = msg.substring(1).split(' ');
+       /*if (message.substring(0, 1) == '!') {
+        var args = message.substring(1).split(' ');
         var cmd = args[0];
         var data = args[1];
 
@@ -22,7 +22,7 @@ bot.on('message', function(msg) {
                 });
             break;
          }
-     }
+     }*/
 });
 
 bot.login(process.env.BOT_TOKEN);
