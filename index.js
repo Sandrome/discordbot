@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-bot.on('ready', function() {
+bot.on('ready', () => {
     console.log(`Logged in as Sreyas!`);
 });
 
-bot.on('message', function(user, userID, channelID, message, evt) {
-    if (message.content === 'ping') {
-       message.reply('pong');
+bot.on('message', msg => {
+    if (msg.content === 'ping') {
+       msg.reply('pong');
        }
        /*if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
