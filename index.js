@@ -5,7 +5,7 @@ bot.on('ready', () => {
     console.log(`Logged in as Sreyas!`);
 });
 
-bot.on('message', msg => {
+bot.on('message', function(msg) {
     if (msg.content === 'ping') {
        msg.reply('pong');
        }
