@@ -9,8 +9,8 @@ bot.on('message', function(msg) {
     if (msg.content === 'ping') {
        msg.reply('pong');
        }
-       /*if (message.substring(0, 1) == '!') {
-        var args = message.substring(1).split(' ');
+       if (msg.substring(0, 1) == '!') {
+        var args = msg.substring(1).split(' ');
         var cmd = args[0];
         var data = args[1];
 
@@ -22,7 +22,7 @@ bot.on('message', function(msg) {
                 });
             break;
          }
-     }*/
+     }
 });
 
 bot.login(process.env.BOT_TOKEN);
