@@ -13,8 +13,7 @@ bot.on('message', msg => {
     else if(msg.content.substring(0, 1) == '!') {
             var args = msg.substring(1).split(' ');
             var cmd = args[0];
-            msg.channel.send(cmd);
-
+            msg.channel.send('Hello');
     }
        /*if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
