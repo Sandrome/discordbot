@@ -6,7 +6,7 @@ bot.on('ready', function() {
 });
 
 bot.on('message', msg => {
-    if (msg.content === 'ping') {
+    if (msg.content === 'ping' && msg.content.substring(0, 1) == 'p') {
        msg.reply('pong');
        }
     else if(msg.content === '!level') {
