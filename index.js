@@ -11,8 +11,8 @@ bot.on('message', msg => {
        msg.channel.send('Hello Pinged');
        }
     else if(msg.content.substring(0, 1) == '!') {
-            var args = msg.substring(1).split(' ');
-            var cmd = args[0];
+            //var args = msg.substring(1).split(' ');
+            //var cmd = args[0];
             msg.channel.send('Hello');
     }
        /*if (message.substring(0, 1) == '!') {
