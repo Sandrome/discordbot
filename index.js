@@ -6,13 +6,15 @@ bot.on('ready', function() {
 });
 
 bot.on('message', msg => {
-    if (msg.content === 'ping' && msg.content.substring(0, 1) == 'p') {
-       msg.reply('pong');
+    if (msg.content === 'ping') {
+       //msg.reply('pong');
        msg.channel.send('Hello Pinged');
        }
     else if(msg.content.substring(0, 1) == '!') {
-        msg.reply('Waiting');
-        
+            var args = msg.substring(1).split(' ');
+            var cmd = args[0];
+            msg.channel.send(cmd);
+
     }
        /*if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
