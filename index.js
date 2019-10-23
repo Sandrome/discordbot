@@ -13,23 +13,15 @@ bot.on('message', msg => {
     else if(msg.content.substring(0, 1) == '!') {
             var args = msg.content.substring(1).split(' ');
             var cmd = args[0];
-            msg.channel.send('Hello');
-            msg.channel.send(cmd);
-    }
-       /*if (message.substring(0, 1) == '!') {
-        var args = message.substring(1).split(' ');
-        var cmd = args[0];
-        var data = args[1];
+            var data = args[1];
+            //msg.channel.send(cmd);
 
         switch(cmd) {
-            case 'ping':
-                bot.sendMessage({
-                    to: channelID,
-                    message: 'Pong!'+data
-                });
+            case 'level':
+                msg.channel.send(data);
             break;
          }
-     }*/
+     }
 });
 
 bot.login(process.env.BOT_TOKEN,3000);
