@@ -20,25 +20,21 @@ bot.on('message', msg => {
 
         switch(cmd) {
             case 'level':
-                    let url = `https://r6tab.com/api/search.php?platform=uplay&search=${data_encoded}`
                     request(url, function (err, response, body) {
+                      let url = `https://r6tab.com/api/search.php?platform=uplay&search=${data_encoded}`
                         if(err){
-                          //res.render('player_details', {player: null, error: 'There is some error! Please try again :)'});
-                          msg.channel.send('error occured');
+                            msg.channel.send('Error Retype');
                         } else {
                           let player = JSON.parse(body)
                           if(player.results == undefined){
-                            //res.render('player_details', {player: null, error: 'Error, Player does not exist'});
-                            msg.channel.send('error undefinded');
+                            msg.channel.send('It is Undefined');
                           } else {
                             let playerText = `It's ${player.results[0].p_name}`;
                             msg.channel.send(playerText);
-                            //res.render('player_details', {player: playerText, error: null});
                             //res.json(player);
                           }
                         }
                       });
-                    });
                 msg.channel.send(data);
             break;
          }
