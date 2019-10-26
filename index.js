@@ -16,7 +16,7 @@ bot.on('message', msg => {
             var cmd = args[0];
             var data = args[1];
             var data_encoded = encodeURIComponent(data);
-            //msg.channel.send(cmd + "demo");
+            msg.channel.send(cmd + "demo");
             let player_url = `https://r6tab.com/api/search.php?platform=uplay&search=${data_encoded}`
 
         switch(cmd) {
