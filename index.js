@@ -21,24 +21,29 @@ bot.on('message', msg => {
 
         switch(cmd) {
             case 'stats:casual':
-                    request(player_url, function (err, response, body) {
-                        if(err){
-                            msg.channel.send('Error Retype');
-                        } else {
-                          let player = JSON.parse(body);
-                          if(player.results == undefined){
-                            msg.channel.send('It is Undefined');
-                          } else {
-                            let playerText = `Player ID: "${player.results[0].p_id}"`;
-                            msg.channel.send(playerText);
-                            //res.json(player);
-                          }
-                        }
-                      });
-                msg.channel.send(data);
+                    stats_casual(player_url);
+                //msg.channel.send(data);
             break;
          }
      }
 });
+
+//Defined Functions
+function stats_casual(player_url){
+  request(player_url, function (err, response, body) {
+    if(err){
+        msg.channel.send('Error Retype');
+    } else {
+      let player = JSON.parse(body);
+      if(player.results == undefined){
+        msg.channel.send('It is Undefined');
+      } else {
+        let playerText = `Player ID: "${player.results[0].p_id}"`;
+        msg.channel.send(playerText);
+        //res.json(player);
+      }
+    }
+  });
+}
 
 bot.login(process.env.BOT_TOKEN,3000);
