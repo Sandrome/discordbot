@@ -16,16 +16,16 @@ bot.on('message', msg => {
             var cmd = args[0];
             var data = args[1];
             var data_encoded = encodeURIComponent(data);
-            //msg.channel.send(cmd);
+            msg.channel.send(cmd + "demo");
+            let url = `https://r6tab.com/api/search.php?platform=uplay&search=${data_encoded}`
 
         switch(cmd) {
             case 'level':
                     request(url, function (err, response, body) {
-                      let url = `https://r6tab.com/api/search.php?platform=uplay&search=${data_encoded}`
                         if(err){
                             msg.channel.send('Error Retype');
                         } else {
-                          let player = JSON.parse(body)
+                          let player = JSON.parse(body);
                           if(player.results == undefined){
                             msg.channel.send('It is Undefined');
                           } else {
