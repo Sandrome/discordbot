@@ -29,13 +29,14 @@ bot.on('message', msg => {
                           if(player.results == undefined){
                             msg.channel.send('It is Undefined');
                           } else {
-                            let playerText = `Player ID: "${player.results[0].p_id}"`;
+                            var playerText = `Player ID: "${player.results[0].p_id}"`;
                             msg.channel.send(playerText);
                             //res.json(player);
                           }
                         }
                       });
-                msg.channel.send(data);
+            case 'stats:ranked':
+                      //
             break;
          }
      }
