@@ -16,7 +16,6 @@ bot.on('message', msg => {
             var cmd = args[0];
             var data = args[1];
             var data_encoded = encodeURIComponent(data);
-            msg.channel.send(cmd + "demo");
             let player_url = `https://r6tab.com/api/search.php?platform=uplay&search=${data_encoded}`
 
         switch(cmd) {
@@ -35,8 +34,21 @@ bot.on('message', msg => {
                           }
                         }
                       });
-            case 'stats:ranked':
-                      //
+            case 'stats:mmr':
+                request(player_url, function (err, response, body) {
+                  if(err){
+                      msg.channel.send('Error Retype');
+                  } else {
+                    let player = JSON.parse(body);
+                    if(player.results == undefined){
+                      msg.channel.send('It is Undefined');
+                    } else {
+                      var playerText = `Player ID: "${player.results[0].p_currentmmr}"`;
+                      msg.channel.send(playerText);
+                      //res.json(player);
+                    }
+                  }
+                });
             break;
          }
      }
