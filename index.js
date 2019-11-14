@@ -33,6 +33,7 @@ bot.on('message', msg => {
                           }
                         }
                       });
+            break;
             case 'ranked:stats':
                 request(player_url, function (err, response, body) {
                   if(err){
