@@ -47,13 +47,13 @@ bot.on('message', msg => {
                       var data_encoded_ranked = encodeURIComponent(playerid);
                       let player_url_ranked = `https://r6tab.com/api/player.php?p_id=${data_encoded_ranked}`
 
-                      request(player_url_ranked, function (err, response, body) {
+                      request(player_url_ranked, function (err, response, body_ranked) {
                         if(err){
-                            msg.channel.send('Error Retype');
+                            msg.channel.send('Error Retype inner request');
                         } else {
-                          let player_ranked = JSON.parse(body);
+                          let player_ranked = JSON.parse(body_ranked);
                           if(player.results == undefined){
-                            msg.channel.send('It is Undefined');
+                            msg.channel.send('It is Undefined inside inner request');
                           } else {
                             var playerText = `Ranked Wins: ${player_ranked.matches[0].db_p_total_rankedwins}`;
                             msg.channel.send(playerText);
