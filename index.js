@@ -69,9 +69,4 @@ bot.on('message', msg => {
      }
 });
 
-//Defined Functions
-function stats_casual(player_url_f){
-  
-}
-
 bot.login(process.env.BOT_TOKEN,3000);
