@@ -9,6 +9,7 @@ bot.on('ready', function() {
 bot.on('message', msg => {
     if (msg.content === 'ping') {
        //msg.reply('pong');
+       console.log('User typed ping and the response is given as pong! It is working');
        msg.channel.send('Hello Pinged');
        }
     else if(msg.content.substring(0, 1) == '!') {
